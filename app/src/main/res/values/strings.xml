@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InventarioApp</string>
+    <string name="txtCorreo">Correo</string>
+    <string name="txtContraseña">Contraseña</string>
+    <string name="ingresa_correo">Ingresa tu correo</string>
+    <string name="ingresa_contraseña">Ingresa tu contraseña</string>
+    <string name="btniniciasesion">Inicie Sesion</string>
+    <string name="btnregistrar">Registrar</string>
+    <string name="titletolbar">REGISTRO DE USUARIOS</string>
+    <string name="nombreregister">Nombre</string>
+    <string name="apellidoregister">Apellido</string>
+    <string name="correoregister">Correo</string>
+    <string name="rcontraseñaregister">Repeti la Contraseña</string>
+    <string name="iconinventario">📦</string>
+    <string name="iconingresos">➕</string>
+    <string name="iconegresos">📤</string>
+    <string name="iconreporte">📊</string>
+    <string name="iconproveedores">📋</string>
+    <string name="iconsalir">🚪</string>
+    <string name="txtinventario">INVENTARIO</string>
+    <string name="txtingresos">INGRESOS</string>
+    <string name="txtegresos">EGRESOS</string>
+    <string name="txtreporte">REPORTES</string>
+    <string name="txtproveedores">REPORTES</string>
+    <string name="txtsalir">SALIR</string>
+    <string name="btnagregar">AGREGAR</string>
+
+</resources>
