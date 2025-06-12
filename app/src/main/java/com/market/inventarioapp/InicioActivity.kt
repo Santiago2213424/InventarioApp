@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import java.time.Instant
 
 class InicioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +19,7 @@ class InicioActivity : AppCompatActivity() {
         }
 
         cardinventario.setOnClickListener {
-            startActivity(Intent(this, InventarioActivity::class.java))
+            startActivity(Intent(this, CategoriasActivity::class.java))
         }
     }
 }
