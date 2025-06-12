@@ -31,10 +31,7 @@ class CategoriasActivity : AppCompatActivity() {
         }
 
         val cardCereales = findViewById<CardView>(R.id.cardCereales)
-        val cardLacteos = findViewById<CardView>(R.id.cardLacteos)
-        val cardBebidas = findViewById<CardView>(R.id.cardBebidas)
-        val cardSnacks = findViewById<CardView>(R.id.cardSnacks)
-        val cardVerduras = findViewById<CardView>(R.id.cardVerduras)
+
 
         fun irAInventario(categoria: String) {
             Toast.makeText(this, "Agrega tus productos", Toast.LENGTH_SHORT).show()
@@ -45,9 +42,5 @@ class CategoriasActivity : AppCompatActivity() {
         }
 
         cardCereales.setOnClickListener { irAInventario("Cereales") }
-        cardLacteos.setOnClickListener { irAInventario("Lácteos") }
-        cardBebidas.setOnClickListener { irAInventario("Bebidas") }
-        cardSnacks.setOnClickListener { irAInventario("Snacks") }
-        cardVerduras.setOnClickListener { irAInventario("Verduras") }
     }
 }
