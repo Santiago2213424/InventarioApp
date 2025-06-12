@@ -28,6 +28,9 @@
         <activity android:name=".CategoriasActivity"/>
         <activity android:name=".AgregarCategoriaActivity"/>
         <activity android:name=".AgregarProductosActivity"/>
+        <activity android:name=".IngresosActivity"/>
+        <activity android:name=".ProveedorActivity"/>
+        <activity android:name=".AgregarProveedorActivity"/>
     </application>
 
 </manifest>

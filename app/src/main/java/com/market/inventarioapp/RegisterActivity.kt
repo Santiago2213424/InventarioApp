@@ -12,10 +12,15 @@ class RegisterActivity : AppCompatActivity () {
         setContentView(R.layout.activity_register)
 
         val btnRegistrarse = findViewById<Button>(R.id.btnRegistrarse)
+        val btnCancelar = findViewById<Button>(R.id.btnCancelar)
 
         btnRegistrarse.setOnClickListener {
             Toast.makeText(this,"Registro Exitoso", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this,LoginActivity::class.java))
+        }
+
+        btnCancelar.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }

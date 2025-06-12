@@ -61,6 +61,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardIngresos"
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_rowWeight="1"
@@ -157,6 +158,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardProveedor"
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_rowWeight="1"

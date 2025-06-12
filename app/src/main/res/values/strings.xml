@@ -21,7 +21,7 @@
     <string name="txtingresos">INGRESOS</string>
     <string name="txtegresos">EGRESOS</string>
     <string name="txtreporte">REPORTES</string>
-    <string name="txtproveedores">REPORTES</string>
+    <string name="txtproveedores">PROVEEDORES</string>
     <string name="txtsalir">SALIR</string>
     <string name="btnagregar">AGREGAR</string>
 
