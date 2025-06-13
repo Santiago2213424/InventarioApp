@@ -4,13 +4,13 @@
     <string name="txtContraseña">Contraseña</string>
     <string name="ingresa_correo">Ingresa tu correo</string>
     <string name="ingresa_contraseña">Ingresa tu contraseña</string>
-    <string name="btniniciasesion">Inicie Sesion</string>
+    <string name="btniniciasesion">Iniciar Sesion</string>
     <string name="btnregistrar">Registrar</string>
     <string name="titletolbar">REGISTRO DE USUARIOS</string>
     <string name="nombreregister">Nombre</string>
     <string name="apellidoregister">Apellido</string>
     <string name="correoregister">Correo</string>
-    <string name="rcontraseñaregister">Repeti la Contraseña</string>
+    <string name="rcontraseñaregister">Repetir la Contraseña</string>
     <string name="iconinventario">📦</string>
     <string name="iconingresos">➕</string>
     <string name="iconegresos">📤</string>
