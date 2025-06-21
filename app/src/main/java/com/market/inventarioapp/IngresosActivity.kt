@@ -13,7 +13,7 @@ class IngresosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ingresos)
 
 
-        val fabAtras = findViewById<FloatingActionButton>(R.id.fabAtras)
+       val fabAtras = findViewById<FloatingActionButton>(R.id.fabAtras)
         fabAtras.setOnClickListener {
             val intent = Intent(this, InicioActivity::class.java)
             startActivity(intent)

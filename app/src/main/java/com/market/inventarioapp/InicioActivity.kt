@@ -13,7 +13,7 @@ class InicioActivity : AppCompatActivity() {
 
         val cardSalir = findViewById<CardView>(R.id.cardSalir)
         val cardinventario = findViewById<CardView>(R.id.cardinventario)
-        val cardIngresos = findViewById<CardView>(R.id.cardIngresos)
+        val cardStock = findViewById<CardView>(R.id.cardStock)
         val cardProveedor = findViewById<CardView>(R.id.cardProveedor)
 
         cardSalir.setOnClickListener {
@@ -24,7 +24,7 @@ class InicioActivity : AppCompatActivity() {
             startActivity(Intent(this, CategoriasActivity::class.java))
         }
 
-        cardIngresos.setOnClickListener {
+        cardStock.setOnClickListener {
             startActivity(Intent(this, IngresosActivity::class.java))
         }
         cardProveedor.setOnClickListener {
