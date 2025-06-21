@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/AzulClaro"
-        app:title="📅 Ingresos por Día"
+        app:title="Stock"
         app:titleTextColor="@android:color/white"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintTop_toTopOf="parent"
