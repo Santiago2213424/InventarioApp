@@ -19,75 +19,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- CARDVIEW con info del proveedor -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardProveedor"
+    <!-- Contenedor Scrollable para los proveedores -->
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/toolbarProveedores"
+        app:layout_constraintBottom_toTopOf="@+id/fabAtras"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <!-- Nombre proveedor -->
-            <TextView
-                android:id="@+id/txtNombreProveedor"
+            <!-- Aquí puedes duplicar más tarjetas de proveedor dinámicamente -->
+
+            <!-- CARDVIEW con info del proveedor -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proveedor: Distribuidora ABC"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="16dp">
 
-            <!-- Botones Editar / Eliminar -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginTop="12dp">
-
-                <Button
-                    android:id="@+id/btnEditarProveedor"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Editar"
-                    android:textAllCaps="false"
-                    android:backgroundTint="@color/AzulClaro"
-                    android:textColor="@android:color/white"
-                    android:layout_marginEnd="8dp"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <Button
-                    android:id="@+id/btnEliminarProveedor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Eliminar"
-                    android:textAllCaps="false" />
+                    <TextView
+                        android:id="@+id/txtNombreProveedor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Proveedor: Distribuidora ABC"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end"
+                        android:layout_marginTop="12dp">
+
+                        <Button
+                            android:id="@+id/btnEditarProveedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Editar"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/AzulClaro"
+                            android:textColor="@android:color/white"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btnEliminarProveedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eliminar"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+
+    <!-- FAB Agregar proveedor -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregarProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Agregar categoría"
         android:src="@android:drawable/ic_input_add"
+        android:contentDescription="Agregar proveedor"
         app:tint="@android:color/white"
         app:backgroundTint="@color/AzulClaro"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
-    <!-- Botón flotante ATRÁS centrado abajo -->
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FAB Atrás -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAtras"
         android:layout_width="wrap_content"

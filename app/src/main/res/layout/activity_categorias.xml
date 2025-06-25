@@ -17,25 +17,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Contenedor de categorías (ScrollView con LinearLayout vertical) -->
+    <!-- ScrollView que deja espacio inferior para los FABs -->
     <ScrollView
         android:id="@+id/scrollViewCategorias"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/toolbarCategorias"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintBottom_toTopOf="@+id/fabAtras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Categoría 1 -->
+            <!-- Aquí puedes duplicar o inflar dinámicamente más categorías -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardCereales"
                 android:layout_width="match_parent"
@@ -44,19 +43,52 @@
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:gravity="center"
-                    android:text="Cereales"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_height="80dp">
+
+                    <TextView
+                        android:id="@+id/txtCategoria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="16dp"
+                        android:text="Cereales"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical" />
+
+                    <ImageView
+                        android:id="@+id/btnEditar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="48dp"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_edit"
+                        android:visibility="gone"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="Editar" />
+
+                    <ImageView
+                        android:id="@+id/btnEliminar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="8dp"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_delete"
+                        android:visibility="gone"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="Eliminar" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 
-    <!-- FloatingActionButton para agregar categorías -->
+    <!-- FAB Agregar categoría (esquina inferior derecha) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregarCategoria"
         android:layout_width="wrap_content"
@@ -65,11 +97,11 @@
         android:src="@android:drawable/ic_input_add"
         app:tint="@android:color/white"
         app:backgroundTint="@color/AzulClaro"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón flotante ATRÁS (izquierda) -->
+    <!-- FAB Atrás (esquina inferior izquierda) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAtras"
         android:layout_width="wrap_content"
@@ -80,5 +112,4 @@
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

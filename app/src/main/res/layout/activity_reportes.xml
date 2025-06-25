@@ -19,99 +19,109 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- CARDVIEW bien debajo del Toolbar -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card1"
+    <!-- Contenido desplazable -->
+    <ScrollView
+        android:id="@+id/scrollViewReportes"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:contentPadding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbarReportes"
+        app:layout_constraintBottom_toTopOf="@+id/fabAtras"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarReportes">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center_vertical">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/arrowGreen"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/arrow_green_up" />
-
-            <TextView
-                android:layout_width="240dp"
+            <!-- CARDVIEW 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Producto"
-                android:textStyle="bold"
-                android:textColorHint="@color/black" />
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:contentPadding="10dp">
 
-            <TextView
-                android:layout_width="60dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/arrow_green_up" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Producto"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$125.00"
+                        android:textSize="16sp"
+                        android:textColor="#2FFF00" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARDVIEW 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="$125.00"
-                android:textSize="16sp"
-                android:textColor="#2FFF00"/>
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/arrow_red_down" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Producto"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$50.00"
+                        android:textSize="16sp"
+                        android:textColor="#FF0000" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Puedes seguir agregando más CardViews aquí si quieres -->
 
         </LinearLayout>
+    </ScrollView>
 
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:contentPadding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card1">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/arrowRed"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/arrow_red_down" />
-
-            <TextView
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Producto"
-                android:textStyle="bold"
-                android:textColorHint="@color/black" />
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:text="$50.00"
-                android:textSize="16sp"
-                android:textColor="#FF0000"/>
-
-        </LinearLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
-    <!-- Botón flotante ATRÁS centrado abajo -->
+    <!-- FAB ATRÁS -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAtras"
         android:layout_width="wrap_content"

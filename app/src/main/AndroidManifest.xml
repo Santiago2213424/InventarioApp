@@ -32,6 +32,10 @@
         <activity android:name=".ProveedorActivity"/>
         <activity android:name=".AgregarProveedorActivity"/>
         <activity android:name=".ReporteActivity"/>
+        <activity android:name=".EditarProveedorActivity"/>
+        <activity android:name=".EditarCategoriaActivity"/>
+        <activity android:name=".BajoStockActivity" />
+        <activity android:name=".AltoStockActivity" />
     </application>
 
 </manifest>

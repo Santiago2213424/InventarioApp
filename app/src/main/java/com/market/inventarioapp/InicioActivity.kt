@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.market.inventarioapp.CategoriasActivity
 
 class InicioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
