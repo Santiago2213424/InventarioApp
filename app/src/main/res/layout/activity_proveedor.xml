@@ -19,77 +19,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Contenedor Scrollable para los proveedores -->
-    <ScrollView
+    <!-- Encabezado opcional -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Proveedores"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarProveedores"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- RecyclerView para mostrar proveedores -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProveedores"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fillViewport="true"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbarProveedores"
-        app:layout_constraintBottom_toTopOf="@+id/fabAtras"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo"
+        app:layout_constraintBottom_toTopOf="@+id/fabAgregarProveedor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Aquí puedes duplicar más tarjetas de proveedor dinámicamente -->
-
-            <!-- CARDVIEW con info del proveedor -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardProveedor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="4dp"
-                app:cardCornerRadius="12dp"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:id="@+id/txtNombreProveedor"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Proveedor: Distribuidora ABC"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="end"
-                        android:layout_marginTop="12dp">
-
-                        <Button
-                            android:id="@+id/btnEditarProveedor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Editar"
-                            android:textAllCaps="false"
-                            android:backgroundTint="@color/AzulClaro"
-                            android:textColor="@android:color/white"
-                            android:layout_marginEnd="8dp" />
-
-                        <Button
-                            android:id="@+id/btnEliminarProveedor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Eliminar"
-                            android:textAllCaps="false" />
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- FAB Agregar proveedor -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -115,5 +69,4 @@
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
