@@ -10,17 +10,23 @@ class AgregarProductosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_productos)
 
+        val categoria = intent.getStringExtra("categoria") ?: ""
+
         val btnCancelarProducto = findViewById<Button>(R.id.btnCancelarProducto)
         val btnGuardarProducto = findViewById<Button>(R.id.btnGuardarProducto)
 
-
         btnGuardarProducto.setOnClickListener {
-            startActivity(Intent(this, InventarioActivity::class.java))
-
+            val intent = Intent(this, InventarioActivity::class.java)
+            intent.putExtra("categoria", categoria)
+            startActivity(intent)
+            finish()
         }
 
         btnCancelarProducto.setOnClickListener {
-            startActivity(Intent(this, InventarioActivity::class.java))
+            val intent = Intent(this, InventarioActivity::class.java)
+            intent.putExtra("categoria", categoria)
+            startActivity(intent)
+            finish()
         }
     }
 }
