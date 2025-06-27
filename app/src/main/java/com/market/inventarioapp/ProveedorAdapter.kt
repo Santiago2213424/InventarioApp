@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 class ProveedorAdapter(
     private val proveedores: List<Proveedor>,
     private val onEditarClick: (Proveedor) -> Unit,
-    private val onEliminarClick: (Proveedor) -> Unit
-) : RecyclerView.Adapter<ProveedorAdapter.ProveedorViewHolder>() {
+    private val onEliminarClick: (Proveedor) -> Unit) :
+    RecyclerView.Adapter<ProveedorAdapter.ProveedorViewHolder>() {
 
     class ProveedorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtNombreProveedor: TextView = view.findViewById(R.id.txtNombreProveedor)
