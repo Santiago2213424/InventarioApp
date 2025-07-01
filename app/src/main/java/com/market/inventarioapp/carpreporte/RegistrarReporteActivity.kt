@@ -1,4 +1,4 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpreporte
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,9 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.market.inventarioapp.InicioActivity
+import com.market.inventarioapp.R
+import com.market.inventarioapp.RepositorioReporte
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -49,6 +52,14 @@ class RegistrarReporteActivity : AppCompatActivity() {
         val fabAtras = findViewById<FloatingActionButton>(R.id.fabAtras)
         fabAtras.setOnClickListener {
             startActivity(Intent(this, InicioActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btnVerHoy).setOnClickListener {
+            startActivity(Intent(this, ReporteDelDiaActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btnHistorial).setOnClickListener {
+            startActivity(Intent(this, ReporteFiltradoActivity::class.java)) // Tú crearás esta pantalla
         }
 
     }

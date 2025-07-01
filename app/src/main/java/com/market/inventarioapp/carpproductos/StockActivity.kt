@@ -1,12 +1,12 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpproductos
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.market.inventarioapp.carpproductos.AltoStockActivity
-import com.market.inventarioapp.carpproductos.BajoStockActivity
+import com.market.inventarioapp.InicioActivity
+import com.market.inventarioapp.R
 
 class StockActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

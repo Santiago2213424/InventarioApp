@@ -1,4 +1,4 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpreporte
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.market.inventarioapp.R
 
 class ReporteAdapter(
     private val reportes: MutableList<Reporte>
@@ -28,7 +29,7 @@ class ReporteAdapter(
 
         holder.txtNombre.text = "Producto: ${reporte.nombre}"
         holder.txtFecha.text = "Fecha: ${reporte.fecha}"
-        holder.txtMonto.text = "Monto: $${String.format("%.2f", reporte.monto)}"
+        holder.txtMonto.text = "Monto: S/${String.format("%.2f", reporte.monto)}"
 
         val color = if (reporte.esIngreso)
             ContextCompat.getColor(holder.itemView.context, android.R.color.holo_green_dark)

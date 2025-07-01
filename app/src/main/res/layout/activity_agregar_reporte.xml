@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- CardView con el formulario (parte superior) -->
+    <!-- CardView con el formulario -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardFormulario"
         android:layout_width="0dp"
@@ -82,24 +82,40 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/AzulClaro"
                 android:textColor="@android:color/white" />
+
+            <!-- Nuevo Botón: Ver Reportes de Hoy -->
+            <Button
+                android:id="@+id/btnVerHoy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📅 Ver Reportes de Hoy"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/verde"
+                android:textColor="@android:color/white" />
+
+            <!-- Nuevo Botón: Ver Reportes por Fecha -->
+            <Button
+                android:id="@+id/btnHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📆 Ver Historial por Fecha"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/amarillo"
+                android:textColor="@android:color/black" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- FloatingActionButton ATRÁS (abajo a la derecha) -->
+    <!-- FloatingActionButton ATRÁS -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAtras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="24dp"
         android:src="@drawable/ic_arrow_back"
         app:backgroundTint="@color/AzulClaro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
         app:tint="@android:color/white" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

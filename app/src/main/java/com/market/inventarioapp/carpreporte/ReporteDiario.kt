@@ -1,4 +1,4 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpreporte
 
 data class ReporteDiario(
     val id: String = "",

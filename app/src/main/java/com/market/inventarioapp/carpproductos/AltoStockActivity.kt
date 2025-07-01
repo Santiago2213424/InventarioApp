@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.market.inventarioapp.InicioActivity
 import com.market.inventarioapp.R
-import com.market.inventarioapp.StockActivity
+import com.market.inventarioapp.carpproductos.StockActivity
 import com.market.inventarioapp.repositorio.ProductoFirestoreRepositorio
 
 class AltoStockActivity : AppCompatActivity() {
@@ -69,8 +69,11 @@ class AltoStockActivity : AppCompatActivity() {
 
     private fun cargarProductos() {
         ProductoFirestoreRepositorio.obtenerPorUsuario(uid) { productos ->
-            val filtrados = productos.filter { it.cantidad > 10 }
+            val filtrados = productos.filter { it.cantidad > 50 }
             adapter.actualizarLista(filtrados)
+            if (filtrados.isEmpty()) {
+                Toast.makeText(this, "No hay productos con Alto stock", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

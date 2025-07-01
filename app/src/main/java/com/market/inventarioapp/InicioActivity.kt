@@ -9,6 +9,8 @@ import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.market.inventarioapp.carpcategorias.CategoriasActivity
+import com.market.inventarioapp.carpproductos.StockActivity
+import com.market.inventarioapp.carpreporte.RegistrarReporteActivity
 
 class InicioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpreporte
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.market.inventarioapp.R
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -65,7 +66,7 @@ class ReporteDelDiaActivity : AppCompatActivity() {
 
         val fabAtras = findViewById<FloatingActionButton>(R.id.fabAtras)
         fabAtras.setOnClickListener {
-            startActivity(Intent(this, InicioActivity::class.java))
+            startActivity(Intent(this, RegistrarReporteActivity::class.java))
             finish() // Cierra la pantalla actual
         }
     }

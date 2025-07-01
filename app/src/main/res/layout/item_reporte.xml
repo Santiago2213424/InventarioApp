@@ -39,7 +39,7 @@
             android:id="@+id/txtMontoReporte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Monto: $50.00"
+            android:text="Monto: S/ 50.00"
             android:textColor="@android:color/holo_green_dark"
             android:textStyle="bold"
             android:layout_marginTop="6dp" />

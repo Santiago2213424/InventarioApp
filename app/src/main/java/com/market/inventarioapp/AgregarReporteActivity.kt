@@ -5,6 +5,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.market.inventarioapp.carpreporte.Reporte
 import java.text.SimpleDateFormat
 import java.util.*
 
