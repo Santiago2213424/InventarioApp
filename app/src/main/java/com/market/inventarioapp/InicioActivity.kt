@@ -67,7 +67,7 @@ class InicioActivity : AppCompatActivity() {
         }
 
         cardReporte.setOnClickListener {
-            startActivity(Intent(this, ReporteActivity::class.java))
+            startActivity(Intent(this, RegistrarReporteActivity::class.java))
         }
     }
 }

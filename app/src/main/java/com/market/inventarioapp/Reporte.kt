@@ -1,8 +1,10 @@
 package com.market.inventarioapp
 
 data class Reporte(
-    val nombre: String,
-    val fecha: String,
-    val monto: Double,
-    val esIngreso: Boolean // true = ganancia, false = gasto
+    val nombre: String = "",
+    val fecha: String = "",
+    val monto: Double = 0.0,
+    val esIngreso: Boolean = true,
+    val uid: String = ""
 )
+

@@ -31,12 +31,13 @@
         <activity android:name=".StockActivity"/>
         <activity android:name=".ProveedorActivity"/>
         <activity android:name=".AgregarProveedorActivity"/>
-        <activity android:name=".ReporteActivity"/>
+        <activity android:name=".RegistrarReporteActivity"/>
         <activity android:name=".EditarProveedorActivity"/>
         <activity android:name=".carpcategorias.EditarCategoriaActivity"/>
         <activity android:name=".carpproductos.BajoStockActivity" />
         <activity android:name=".carpproductos.AltoStockActivity" />
         <activity android:name=".carpproductos.EditarProductoActivity"/>
+        <activity android:name=".ReporteDelDiaActivity"/>
     </application>
 
 </manifest>
