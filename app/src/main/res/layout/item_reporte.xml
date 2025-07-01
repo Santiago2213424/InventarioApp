@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:layout_marginHorizontal="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nombre o descripción del reporte -->
+        <TextView
+            android:id="@+id/txtNombreReporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Producto: Galletas Oreo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/txtFechaReporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha: 2025-06-25"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+
+        <!-- Monto -->
+        <TextView
+            android:id="@+id/txtMontoReporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monto: $50.00"
+            android:textColor="@android:color/holo_green_dark"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

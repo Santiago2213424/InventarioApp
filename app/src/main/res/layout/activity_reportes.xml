@@ -19,109 +19,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Contenido desplazable -->
-    <ScrollView
-        android:id="@+id/scrollViewReportes"
+    <!-- Filtro por fecha -->
+    <LinearLayout
+        android:id="@+id/layoutFiltro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarReportes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/etFechaFiltro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="YYYY-MM-DD"
+            android:inputType="date"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text" />
+
+        <Button
+            android:id="@+id/btnFiltrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtrar"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/AzulClaro"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- RecyclerView para reportes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerReportes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/toolbarReportes"
-        app:layout_constraintBottom_toTopOf="@+id/fabAtras"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutFiltro"
+        app:layout_constraintBottom_toTopOf="@id/txtTotales"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <!-- Totales -->
+    <TextView
+        android:id="@+id/txtTotales"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ganancias: $0.00   |   Gastos: $0.00"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerReportes"
+        app:layout_constraintBottom_toTopOf="@id/fabAtras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- CARDVIEW 1 -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                app:contentPadding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="5dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/arrow_green_up" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="10dp"
-                        android:text="Producto"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$125.00"
-                        android:textSize="16sp"
-                        android:textColor="#2FFF00" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- CARDVIEW 2 -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                app:contentPadding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="5dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/arrow_red_down" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="10dp"
-                        android:text="Producto"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$50.00"
-                        android:textSize="16sp"
-                        android:textColor="#FF0000" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Puedes seguir agregando más CardViews aquí si quieres -->
-
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- FAB ATRÁS -->
+    <!-- Botón ATRÁS -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAtras"
         android:layout_width="wrap_content"
@@ -133,4 +88,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

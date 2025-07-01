@@ -41,7 +41,7 @@
 
                 <!-- Nombre -->
                 <EditText
-                    android:id="@+id/editnombre"
+                    android:id="@+id/editNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/nombreregister"
@@ -51,6 +51,7 @@
 
                 <!-- Apellido -->
                 <EditText
+                    android:id="@+id/editApellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/apellidoregister"
@@ -60,10 +61,12 @@
 
                 <!-- Correo -->
                 <EditText
+                    android:id="@+id/editCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/txtCorreo"
                     android:singleLine="true"
+                    android:inputType="textEmailAddress"
                     android:textColorHint="@color/black"
                     android:layout_marginTop="8dp"/>
 
@@ -84,6 +87,7 @@
                     android:layout_marginTop="4dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword" />
@@ -106,6 +110,7 @@
                     android:layout_marginTop="4dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editRepeatPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword" />

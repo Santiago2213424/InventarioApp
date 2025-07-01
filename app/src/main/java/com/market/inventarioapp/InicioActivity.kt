@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
 import com.market.inventarioapp.CategoriasActivity
 
 class InicioActivity : AppCompatActivity() {
@@ -19,7 +20,9 @@ class InicioActivity : AppCompatActivity() {
         val cardReporte = findViewById<CardView>(R.id.cardReporte)
 
         cardSalir.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
         cardinventario.setOnClickListener {
