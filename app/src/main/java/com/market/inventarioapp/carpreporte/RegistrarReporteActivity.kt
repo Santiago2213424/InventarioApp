@@ -8,7 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.market.inventarioapp.InicioActivity
 import com.market.inventarioapp.R
-import com.market.inventarioapp.RepositorioReporte
+import com.market.inventarioapp.carpreporte.RepositorioReporte
 import java.text.SimpleDateFormat
 import java.util.*
 

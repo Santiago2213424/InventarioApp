@@ -1,7 +1,6 @@
-package com.market.inventarioapp
+package com.market.inventarioapp.carpreporte
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.market.inventarioapp.carpreporte.Reporte
 
 object RepositorioReporte {
 
