@@ -2,16 +2,45 @@ package com.market.inventarioapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
-import com.market.inventarioapp.CategoriasActivity
+import com.google.firebase.firestore.FirebaseFirestore
+import com.market.inventarioapp.carpcategorias.CategoriasActivity
 
 class InicioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
+        val txtBienvenido = findViewById<TextView>(R.id.txtBienvenida)
+        val txtCorreo = findViewById<TextView>(R.id.txtCorreo)
+
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+
+        if (uid != null) {
+            val db = FirebaseFirestore.getInstance()
+            val usuariosRef = db.collection("usuarios").document(uid)
+
+            usuariosRef.get()
+                .addOnSuccessListener { documento ->
+                    if (documento != null && documento.exists()) {
+                        val nombre = documento.getString("nombre") ?: "Usuario"
+                        val correo = documento.getString("correo") ?: "Correo no disponible"
+
+                        txtBienvenido.text = "Bienvenido $nombre"
+                        txtCorreo.text = "Correo: $correo"
+                    } else {
+                        txtBienvenido.text = "Bienvenido"
+                        txtCorreo.text = "Correo no disponible"
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error al obtener los datos", Toast.LENGTH_SHORT).show()
+                }
+        }
 
         val cardSalir = findViewById<CardView>(R.id.cardSalir)
         val cardinventario = findViewById<CardView>(R.id.cardinventario)
@@ -28,12 +57,15 @@ class InicioActivity : AppCompatActivity() {
         cardinventario.setOnClickListener {
             startActivity(Intent(this, CategoriasActivity::class.java))
         }
+
         cardStock.setOnClickListener {
             startActivity(Intent(this, StockActivity::class.java))
         }
+
         cardProveedor.setOnClickListener {
-            startActivity(Intent(this, ProveedorActivity::class.java ))
+            startActivity(Intent(this, ProveedorActivity::class.java))
         }
+
         cardReporte.setOnClickListener {
             startActivity(Intent(this, ReporteActivity::class.java))
         }

@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5"
-    tools:context=".carpcategorias.EditarCategoriaActivity">
+    tools:context=".carpproductos.EditarProductoActivity">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarEditarCategoria"
+        android:id="@+id/toolbarEditarProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/AzulClaro"
-        app:title="EDITAR CATEGORÍA"
+        app:title="EDITAR PRODUCTO"
         app:titleTextColor="@android:color/white" />
 
     <!-- Contenido -->
@@ -29,18 +29,20 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- Imagen decorativa -->
             <ImageView
-                android:id="@+id/imgCategoria"
+                android:id="@+id/imgProducto"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:src="@drawable/imgbodega"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Imagen Categoría"
+                android:contentDescription="Imagen Producto"
                 android:scaleType="centerCrop" />
 
+            <!-- Card con los inputs -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardEditarCategoria"
+                android:id="@+id/cardEditarProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
@@ -54,34 +56,76 @@
                     android:padding="24dp">
 
                     <TextView
-                        android:id="@+id/txtTituloCategoria"
+                        android:id="@+id/txtTituloProducto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Editar Categoría"
+                        android:text="Editar Producto"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="16dp" />
 
+                    <!-- Nombre del producto -->
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilNombreCategoria"
+                        android:id="@+id/tilNombreProducto"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Nombre de la categoría"
+                        android:hint="Nombre del producto"
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusBottomStart="12dp"
                         app:boxCornerRadiusBottomEnd="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edtNombreCategoria"
+                            android:id="@+id/edtNombreProductoEditar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <!-- Cantidad -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCantidadProducto"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Cantidad"
+                        android:layout_marginTop="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtCantidadProductoEditar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Precio -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPrecioProducto"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Precio"
+                        android:layout_marginTop="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtPrecioProductoEditar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Botones -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -90,7 +134,7 @@
                         android:gravity="end">
 
                         <Button
-                            android:id="@+id/btnCancelarCategoria"
+                            android:id="@+id/btnCancelarProductoEditar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -103,7 +147,7 @@
                             android:padding="12dp" />
 
                         <Button
-                            android:id="@+id/btnGuardarCategoria"
+                            android:id="@+id/btnGuardarProductoEditar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -113,13 +157,10 @@
                             android:backgroundTint="@color/AzulClaro"
                             android:textColor="@android:color/white"
                             android:padding="12dp" />
-
                     </LinearLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

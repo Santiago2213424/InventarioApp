@@ -5,8 +5,10 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:background="@android:color/white"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:gravity="center_vertical">
 
+    <!-- Nombre -->
     <TextView
         android:id="@+id/txtNombre"
         android:layout_width="0dp"
@@ -17,6 +19,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/black" />
 
+    <!-- Cantidad -->
     <TextView
         android:id="@+id/txtCantidad"
         android:layout_width="0dp"
@@ -27,6 +30,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/black" />
 
+    <!-- Precio -->
     <TextView
         android:id="@+id/txtPrecio"
         android:layout_width="0dp"
@@ -36,5 +40,36 @@
         android:text="S/ 5.00"
         android:textSize="16sp"
         android:textColor="@android:color/black" />
+
+    <!-- Categoría -->
+    <TextView
+        android:id="@+id/txtCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Categoría"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+
+    <!-- Botón Editar -->
+    <ImageView
+        android:id="@+id/btnEditarProducto"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:contentDescription="Editar producto"
+        android:visibility="gone" />
+
+    <!-- Botón Eliminar -->
+    <ImageView
+        android:id="@+id/btnEliminarProducto"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:contentDescription="Eliminar producto"
+        android:visibility="gone" />
 
 </LinearLayout>

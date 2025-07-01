@@ -5,31 +5,27 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.market.inventarioapp.carpproductos.AltoStockActivity
+import com.market.inventarioapp.carpproductos.BajoStockActivity
 
 class StockActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stock)
 
-
-        val cardBajoStock = findViewById<CardView>(R.id.cardBajoStock)
-        val cardAltoStock = findViewById<CardView>(R.id.cardAltoStock)
-
-        cardBajoStock.setOnClickListener {
-            val intent = Intent(this, BajoStockActivity::class.java)
-            startActivity(intent)
+        // Botón Bajo Stock
+        findViewById<CardView>(R.id.cardBajoStock).setOnClickListener {
+            startActivity(Intent(this, BajoStockActivity::class.java))
         }
 
-        cardAltoStock.setOnClickListener {
-            val intent = Intent(this, AltoStockActivity::class.java)
-            startActivity(intent)
+        // Botón Alto Stock
+        findViewById<CardView>(R.id.cardAltoStock).setOnClickListener {
+            startActivity(Intent(this, AltoStockActivity::class.java))
         }
 
-
-       val fabAtras = findViewById<FloatingActionButton>(R.id.fabAtras)
-        fabAtras.setOnClickListener {
-            val intent = Intent(this, InicioActivity::class.java)
-            startActivity(intent)
+        // Botón Atrás
+        findViewById<FloatingActionButton>(R.id.fabAtras).setOnClickListener {
+            startActivity(Intent(this, InicioActivity::class.java))
             finish()
         }
     }

@@ -24,18 +24,19 @@
 
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".InicioActivity"/>
-        <activity android:name=".InventarioActivity"/>
-        <activity android:name=".CategoriasActivity"/>
-        <activity android:name=".AgregarCategoriaActivity"/>
-        <activity android:name=".AgregarProductosActivity"/>
+        <activity android:name=".carpproductos.InventarioActivity"/>
+        <activity android:name=".carpcategorias.CategoriasActivity"/>
+        <activity android:name=".carpcategorias.AgregarCategoriaActivity"/>
+        <activity android:name=".carpproductos.AgregarProductosActivity"/>
         <activity android:name=".StockActivity"/>
         <activity android:name=".ProveedorActivity"/>
         <activity android:name=".AgregarProveedorActivity"/>
         <activity android:name=".ReporteActivity"/>
         <activity android:name=".EditarProveedorActivity"/>
-        <activity android:name=".EditarCategoriaActivity"/>
-        <activity android:name=".BajoStockActivity" />
-        <activity android:name=".AltoStockActivity" />
+        <activity android:name=".carpcategorias.EditarCategoriaActivity"/>
+        <activity android:name=".carpproductos.BajoStockActivity" />
+        <activity android:name=".carpproductos.AltoStockActivity" />
+        <activity android:name=".carpproductos.EditarProductoActivity"/>
     </application>
 
 </manifest>

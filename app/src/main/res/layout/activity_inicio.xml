@@ -1,182 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".InicioActivity">
 
-    <!-- Imagen principal -->
-    <ImageView
-        android:id="@+id/imgHeader"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:src="@drawable/imgbodega1"
-        android:scaleType="centerCrop"
-        android:layout_marginBottom="12dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <!-- Botón Inventario -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardinventario"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp">
-
+        <!-- Datos del usuario -->
         <LinearLayout
+            android:id="@+id/layoutUserInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:paddingBottom="12dp">
 
             <TextView
+                android:id="@+id/txtBienvenida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/iconinventario"
-                android:textSize="32sp" />
+                android:text="Bienvenido"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
             <TextView
+                android:id="@+id/txtCorreo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/txtinventario"
-                android:textColor="@color/black"
+                android:text="Correo:"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <!-- Botón Stock -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardStock"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp">
-
-        <LinearLayout
+        <!-- Imagen principal -->
+        <ImageView
+            android:id="@+id/imgHeader"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_height="200dp"
+            android:src="@drawable/imgbodega1"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🔔"
-                android:textSize="32sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Stock"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Botón Reporte -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardReporte"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp">
-
-        <LinearLayout
+        <!-- Botones -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardinventario"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/iconreporte"
-                android:textSize="32sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/txtreporte"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iconinventario"
+                    android:textSize="32sp" />
 
-    <!-- Botón Proveedores -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardProveedor"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txtinventario"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardStock"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/iconproveedores"
-                android:textSize="32sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/txtproveedores"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔔"
+                    android:textSize="32sp" />
 
-    <!-- Botón Salir -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardSalir"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Stock"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardReporte"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/iconsalir"
-                android:textSize="32sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/txtsalir"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iconreporte"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txtreporte"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iconproveedores"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txtproveedores"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSalir"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iconsalir"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txtsalir"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
