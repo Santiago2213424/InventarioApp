@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -29,16 +30,17 @@
         <activity android:name=".carpcategorias.AgregarCategoriaActivity"/>
         <activity android:name=".carpproductos.AgregarProductosActivity"/>
         <activity android:name=".carpproductos.StockActivity"/>
-        <activity android:name=".ProveedorActivity"/>
-        <activity android:name=".AgregarProveedorActivity"/>
+        <activity android:name=".carpproveedores.ProveedoresActivity"/>
+        <activity android:name=".carpproveedores.AgregarProveedorActivity"/>
         <activity android:name=".carpreporte.RegistrarReporteActivity"/>
-        <activity android:name=".EditarProveedorActivity"/>
+        <activity android:name=".carpproveedores.EditarProveedorActivity"/>
         <activity android:name=".carpcategorias.EditarCategoriaActivity"/>
         <activity android:name=".carpproductos.BajoStockActivity" />
         <activity android:name=".carpproductos.AltoStockActivity" />
         <activity android:name=".carpproductos.EditarProductoActivity"/>
         <activity android:name=".carpreporte.ReporteDelDiaActivity"/>
         <activity android:name=".carpreporte.ReporteFiltradoActivity"/>
+
     </application>
 
 </manifest>
