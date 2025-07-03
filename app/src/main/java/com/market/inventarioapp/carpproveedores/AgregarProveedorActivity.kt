@@ -22,10 +22,12 @@ class AgregarProveedorActivity : AppCompatActivity() {
         val btnGuardar = findViewById<Button>(R.id.btnGuardarProveedor)
         val btnCancelar = findViewById<Button>(R.id.btnCancelarProveedor)
 
+        //Cierra la actividad sin guardar
         btnCancelar.setOnClickListener {
             finish()
         }
 
+        //Obtiene los valores ingresados.
         btnGuardar.setOnClickListener {
             val nombre = edtNombre.text.toString().trim()
             val numero = edtNumero.text.toString().trim()
@@ -35,6 +37,7 @@ class AgregarProveedorActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            //Obtiene
             val uid = FirebaseAuth.getInstance().currentUser?.uid
             if (uid != null) {
                 val proveedor = Proveedor(

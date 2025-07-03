@@ -1,4 +1,4 @@
-package com.market.inventarioapp.carpproveedores
+package com.market.inventarioapp.carpreporte
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.market.inventarioapp.R
-import com.market.inventarioapp.carpreporte.Reporte
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
