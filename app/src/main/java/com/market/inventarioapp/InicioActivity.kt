@@ -2,6 +2,7 @@ package com.market.inventarioapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -73,6 +74,11 @@ class InicioActivity : AppCompatActivity() {
 
         cardReporte.setOnClickListener {
             startActivity(Intent(this, RegistrarReporteActivity::class.java))
+        }
+        val btnAbrirMapa = findViewById<ImageButton>(R.id.btnAbrirMapa)
+        btnAbrirMapa.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

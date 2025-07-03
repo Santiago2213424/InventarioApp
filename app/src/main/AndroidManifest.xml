@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- PERMISO DE INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,16 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InventarioApp"
         tools:targetApi="31">
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+
+        <!-- ACTIVIDADES EXISTENTES -->
+        <activity android:name=".LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Tus otras actividades -->
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".InicioActivity"/>
         <activity android:name=".carpproductos.InventarioActivity"/>
@@ -40,6 +42,14 @@
         <activity android:name=".carpproductos.EditarProductoActivity"/>
         <activity android:name=".carpreporte.ReporteDelDiaActivity"/>
         <activity android:name=".carpreporte.ReporteFiltradoActivity"/>
+
+        <!-- NUEVA ACTIVIDAD PARA GOOGLE MAPS -->
+        <activity android:name=".MapsActivity" />
+
+        <!-- CLAVE API DE GOOGLE MAPS -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC-x1fioES_IebSIFMppMZ7GIVUxeJUwIQ" />
 
     </application>
 
