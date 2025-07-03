@@ -16,6 +16,7 @@ class AgregarCategoriaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_categoria)
 
+
         val btnCancelar = findViewById<Button>(R.id.btnCancelarCategoria)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarCategoria)
         val edtNombreCategoria = findViewById<TextInputEditText>(R.id.edtNombreCategoria)
@@ -25,17 +26,20 @@ class AgregarCategoriaActivity : AppCompatActivity() {
             finish()
         }
 
+        //Obtiene el texto ingresado del usuario y borra epacios vacios
         btnGuardar.setOnClickListener {
             val nombre = edtNombreCategoria.text.toString().trim()
 
+            //Validacion
             if (nombre.isEmpty()) {
                 Toast.makeText(this, "Por favor ingresa el nombre de la categoría", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            //Da error si el campo está vacío y detiene la ejecución
             val uid = FirebaseAuth.getInstance().currentUser?.uid
             if (uid != null) {
-                // 🔑 Generar un ID único
+                // Genera un ID único y crea el objeto Categoria
                 val id = UUID.randomUUID().toString()
                 val nuevaCategoria = Categoria(id = id, nombre = nombre, usuarioId = uid)
 

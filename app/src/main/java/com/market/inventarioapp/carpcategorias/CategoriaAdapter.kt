@@ -14,28 +14,32 @@ import com.market.inventarioapp.carpproductos.InventarioActivity
 import com.market.inventarioapp.R
 import com.market.inventarioapp.repositorio.CategoriaFirestoreRepositorio
 
+//Es el adaptador para llenar el RecyclerView con las categorias
 class CategoriaAdapter(
     private val context: Context,
     private var listaCategorias: MutableList<Categoria>
 ) : RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder>() {
 
+    //Asocia elementos del XML item a cada tarjeta
     inner class CategoriaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtCategoria: TextView = itemView.findViewById(R.id.txtCategoria)
         val btnEditar: ImageView = itemView.findViewById(R.id.btnEditar)
         val btnEliminar: ImageView = itemView.findViewById(R.id.btnEliminar)
     }
 
+    //Crea el dieseño de cada item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriaViewHolder {
         val vista = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_categoria, parent, false)
         return CategoriaViewHolder(vista)
     }
 
+    //Coloca el nombre de la categoria en el textview
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
         val categoria = listaCategorias[position]
         holder.txtCategoria.text = categoria.nombre
 
-        // Clic corto: ir a Inventario
+        // Oculta los botones y va al inventario filtrado  por categoria
         holder.itemView.setOnClickListener {
             holder.btnEditar.visibility = View.GONE
             holder.btnEliminar.visibility = View.GONE
@@ -44,14 +48,14 @@ class CategoriaAdapter(
             context.startActivity(intent)
         }
 
-        // Clic largo: mostrar botones
+        // Clic largo: mostrar botones editar y eliminar
         holder.itemView.setOnLongClickListener {
             holder.btnEditar.visibility = View.VISIBLE
             holder.btnEliminar.visibility = View.VISIBLE
             true
         }
 
-        // Botón Editar
+        // Botón Editar, envia los datos a la pantalla de edicion
         holder.btnEditar.setOnClickListener {
             val intent = Intent(context, EditarCategoriaActivity::class.java)
             intent.putExtra("categoriaId", categoria.id)
@@ -59,7 +63,7 @@ class CategoriaAdapter(
             context.startActivity(intent)
         }
 
-        // Botón Eliminar
+        // Muestra confirmación y elimina la categoría de Firestore y de la lista local.
         holder.btnEliminar.setOnClickListener {
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Eliminar categoría")
@@ -85,10 +89,6 @@ class CategoriaAdapter(
         }
     }
 
+    //Cuantos elementos mostrara en el RecyclerView, devuelve el tamaño actual de esa lista
     override fun getItemCount(): Int = listaCategorias.size
-
-    fun actualizarLista(nuevaLista: List<Categoria>) {
-        listaCategorias = nuevaLista.toMutableList()
-        notifyDataSetChanged()
-    }
 }

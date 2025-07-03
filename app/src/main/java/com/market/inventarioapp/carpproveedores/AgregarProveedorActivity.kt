@@ -12,7 +12,6 @@ import com.market.inventarioapp.repositorio.ProveedorFirestoreRepositorio
 import java.util.*
 
 class AgregarProveedorActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_proveedor)
@@ -27,8 +26,9 @@ class AgregarProveedorActivity : AppCompatActivity() {
             finish()
         }
 
-        //Obtiene los valores ingresados.
+
         btnGuardar.setOnClickListener {
+            //Llena los campos de texto
             val nombre = edtNombre.text.toString().trim()
             val numero = edtNumero.text.toString().trim()
 
@@ -37,8 +37,8 @@ class AgregarProveedorActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //Obtiene
-            val uid = FirebaseAuth.getInstance().currentUser?.uid
+            //Obtiene el uid actual con FirebaseAuth.getInstance().currentUser?.uid.
+            val uid = FirebaseAuth.getInstance().currentUser?.uid //FirebaseAuth proporciona el ID del usuario actualmente autenticado.
             if (uid != null) {
                 val proveedor = Proveedor(
                     id = UUID.randomUUID().toString(),

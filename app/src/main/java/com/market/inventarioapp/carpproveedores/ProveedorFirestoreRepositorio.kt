@@ -22,10 +22,10 @@ object ProveedorFirestoreRepositorio {
         onComplete: (List<Proveedor>) -> Unit,
         onError: (Exception) -> Unit
     ) {
-        coleccion.whereEqualTo("usuarioId", usuarioId)
+        coleccion.whereEqualTo("usuarioId", usuarioId) //filtra solo proveedores del usuario logeado
             .get()
             .addOnSuccessListener { result ->
-                val lista = result.documents.mapNotNull { it.toObject(Proveedor::class.java) }
+                val lista = result.documents.mapNotNull { it.toObject(Proveedor::class.java) } //Covierte cada documento a objeto kotlin
                 onComplete(lista)
             }
             .addOnFailureListener { onError(it) }
@@ -39,7 +39,7 @@ object ProveedorFirestoreRepositorio {
             .addOnFailureListener { onComplete(false) }
     }
 
-    //Vuelve a escribir el documento con nuevos datos.
+    //Hace un set con el mismo id para sobrescribirlo
     fun actualizarProveedor(proveedor: Proveedor, onComplete: (Boolean) -> Unit) {
         coleccion.document(proveedor.id)
             .set(proveedor)

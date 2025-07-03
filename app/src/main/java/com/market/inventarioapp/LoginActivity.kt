@@ -8,16 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
-
+//Esta clase hereda de AppCompatActivity, es una pantalla en la app
 class LoginActivity : AppCompatActivity() {
 
+    //Clase principal de Firebase que permite manejar login,lagout,registro,etc
     private lateinit var auth: FirebaseAuth
 
+    //Inicia la actividad, y usa el archivo xml como interfaz grafica
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //Inicializa Firebase Authentication, lo usamos para autenticar usuarios
         auth = FirebaseAuth.getInstance()
+
 
         val txtCorreo = findViewById<TextInputEditText>(R.id.txtCorreo)
         val txtContraseña = findViewById<TextInputEditText>(R.id.txtContraseña)
@@ -31,21 +35,26 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnIniciaSesion.setOnClickListener {
+            //Toma los textos Ingresados por el usuario y borra espacios en blanco
             val correo = txtCorreo.text.toString().trim()
             val contraseña = txtContraseña.text.toString().trim()
+
 
             if (correo.isEmpty() || contraseña.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            //Este método autentica al usuario con los datos en Firebase
             auth.signInWithEmailAndPassword(correo, contraseña)
                 .addOnCompleteListener { task ->
+                    //Si las credenciales estan registradas y son las correctas
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Iniciaste sesión", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, InicioActivity::class.java))
                         finish()
                     } else {
+                        //Captura los mensajes de error firebase y pasa a la funcion traducirErrorFirebase
                         val errorTraducido = traducirErrorFirebase(task.exception?.message)
                         Toast.makeText(this, errorTraducido, Toast.LENGTH_LONG).show()
                     }
@@ -58,13 +67,7 @@ class LoginActivity : AppCompatActivity() {
         return when {
             error?.contains("There is no user record", ignoreCase = true) == true ->
                 "El correo no está registrado."
-            error?.contains("The password is invalid", ignoreCase = true) == true ->
-                "La contraseña es incorrecta."
-            error?.contains("A network error", ignoreCase = true) == true ->
-                "Error de red. Revisa tu conexión a Internet."
-            error?.contains("The email address is badly formatted", ignoreCase = true) == true ->
-                "El formato del correo es inválido."
-            else -> "Error al iniciar sesión: $error"
+            else -> "Error al iniciar sesión"
         }
     }
 }

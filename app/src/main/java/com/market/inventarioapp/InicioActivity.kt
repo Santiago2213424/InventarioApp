@@ -19,15 +19,18 @@ class InicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
+        //Crea dos variables, mostraran los datos del Usuario
         val txtBienvenido = findViewById<TextView>(R.id.txtBienvenida)
         val txtCorreo = findViewById<TextView>(R.id.txtCorreo)
 
+        //Obtiene el ID unico del usuario loguado, si es null no hay sesion activa
         val uid = FirebaseAuth.getInstance().currentUser?.uid
-
         if (uid != null) {
+            //Accede a la collection Usuarios y selecciona el documento que el id sea igual uid del usuario
             val db = FirebaseFirestore.getInstance()
             val usuariosRef = db.collection("usuarios").document(uid)
 
+            //Luego conuslta si el usuario existe
             usuariosRef.get()
                 .addOnSuccessListener { documento ->
                     if (documento != null && documento.exists()) {
@@ -46,15 +49,20 @@ class InicioActivity : AppCompatActivity() {
                 }
         }
 
+        //cada cardview representa un boton visual para navegar a otras pantallas
         val cardSalir = findViewById<CardView>(R.id.cardSalir)
         val cardinventario = findViewById<CardView>(R.id.cardinventario)
         val cardStock = findViewById<CardView>(R.id.cardStock)
         val cardProveedor = findViewById<CardView>(R.id.cardProveedor)
         val cardReporte = findViewById<CardView>(R.id.cardReporte)
+        val btnAbrirMapa = findViewById<ImageButton>(R.id.btnAbrirMapa)
+
 
         cardSalir.setOnClickListener {
+            //Cierra sesion de usuario actual -- Borra el token de la sesion local
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, LoginActivity::class.java)
+            //Inicio una nueva tarea luego borra las actividades anteriores en la pila de tareas
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
@@ -75,7 +83,7 @@ class InicioActivity : AppCompatActivity() {
         cardReporte.setOnClickListener {
             startActivity(Intent(this, RegistrarReporteActivity::class.java))
         }
-        val btnAbrirMapa = findViewById<ImageButton>(R.id.btnAbrirMapa)
+
         btnAbrirMapa.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
