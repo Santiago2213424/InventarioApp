@@ -12,7 +12,6 @@ object ProductoFirestoreRepositorio {
     fun agregarProducto(producto: Producto, callback: (Boolean) -> Unit) {
         val idGenerado = UUID.randomUUID().toString()
         val productoConId = producto.copy(id = idGenerado)
-
         productosCollection.document(idGenerado).set(productoConId)
             .addOnSuccessListener { callback(true) }
             .addOnFailureListener { callback(false) }

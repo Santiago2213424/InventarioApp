@@ -46,15 +46,17 @@ class ProductoAdapter(
             holder.txtCategoria.visibility = View.GONE
         }
 
-        // Mostrar botones con long click
+        // Esto hace que al mostrar el ítem, los botones no se vean inicialmente
         holder.btnEditar.visibility = View.GONE
         holder.btnEliminar.visibility = View.GONE
 
+        //Ocultar los botones si se hace click normal
         holder.itemView.setOnClickListener {
             holder.btnEditar.visibility = View.GONE
             holder.btnEliminar.visibility = View.GONE
         }
 
+        //Mostrar botones al mantener presionado
         holder.itemView.setOnLongClickListener {
             holder.btnEditar.visibility = View.VISIBLE
             holder.btnEliminar.visibility = View.VISIBLE

@@ -38,13 +38,13 @@ class ReporteFiltradoActivity : AppCompatActivity() {
         adapter = ReporteAdapter(mutableListOf())
         recyclerReportes.adapter = adapter
 
-        // 👉 Mostrar DatePicker al tocar el EditText
+        //  Mostrar DatePicker al tocar el EditText
         etFechaFiltro.showSoftInputOnFocus = false
         etFechaFiltro.setOnClickListener {
             mostrarDatePicker()
         }
 
-        // 👉 Botón FILTRAR
+        // Botón FILTRAR
         btnFiltrar.setOnClickListener {
             val fecha = etFechaFiltro.text.toString().trim()
             if (fecha.isEmpty()) {
@@ -54,7 +54,7 @@ class ReporteFiltradoActivity : AppCompatActivity() {
             }
         }
 
-        // 👉 Botón ATRÁS
+        //  Botón ATRÁS
         fabAtras.setOnClickListener {
             finish()
         }

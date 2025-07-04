@@ -27,7 +27,7 @@ class EditarCategoriaActivity : AppCompatActivity() {
         val btnCancelar = findViewById<Button>(R.id.btnCancelarCategoria)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarCategoria)
 
-        // Obtener datos del intent
+        // Obtiene los datos que fueron enviados desde otra pantalla intent
         categoriaId = intent.getStringExtra("categoriaId")
         categoriaNombreOriginal = intent.getStringExtra("categoriaNombre")
         edtNombreCategoria.setText(categoriaNombreOriginal)
@@ -37,11 +37,15 @@ class EditarCategoriaActivity : AppCompatActivity() {
         }
 
         btnGuardar.setOnClickListener {
+            //Captura el nuevo nombre ingresado
             val nuevoNombre = edtNombreCategoria.text.toString().trim()
             if (nuevoNombre.isEmpty()) {
                 Toast.makeText(this, "Ingresa un nombre válido", Toast.LENGTH_SHORT).show()
+                //Verifica que el categoriaid no sea nulo
             } else if (categoriaId != null) {
+                //Obtiene el id del usuario autenticado con firebase. si no hay sale del bloque
                 val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return@setOnClickListener
+                //Crea un objeto Categoria con los nuevos datos
                 val categoriaActualizada = Categoria(
                     id = categoriaId!!,
                     nombre = nuevoNombre,

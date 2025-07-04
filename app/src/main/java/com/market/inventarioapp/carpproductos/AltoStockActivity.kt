@@ -16,27 +16,32 @@ import com.market.inventarioapp.repositorio.ProductoFirestoreRepositorio
 
 class AltoStockActivity : AppCompatActivity() {
 
+    //Componente que mostrará la lista de productos
     private lateinit var recyclerView: RecyclerView
+    //Adaptador que convierte los objetos Producto en vistas individuales
     private lateinit var adapter: ProductoAdapter
+    //Almacena el ID del usuario actual
     private lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alto_stock)
 
-        // Toolbar
+        // Configuara la barra superior del toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbarAltoStock)
         setSupportActionBar(toolbar)
 
-        // UID del usuario logueado
+        // Obtiene el ID del usuario actualmente logueado
         uid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 
-        // RecyclerView
+        // Se vincula el RecyclerView del layout
         recyclerView = findViewById(R.id.recyclerAltoStock)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        //Crea un adapatador a la lista vacia, muestra los productos
         adapter = ProductoAdapter(
             mutableListOf(),
+            //Se abre la pantalla EditarProductoActivity con su id
             onEditar = { producto ->
                 val intent = Intent(this, EditarProductoActivity::class.java)
                 intent.putExtra("productoId", producto.id)

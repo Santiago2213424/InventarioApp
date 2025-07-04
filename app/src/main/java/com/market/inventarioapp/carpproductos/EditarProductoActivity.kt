@@ -11,6 +11,7 @@ import com.market.inventarioapp.repositorio.ProductoFirestoreRepositorio
 
 class EditarProductoActivity : AppCompatActivity() {
 
+    //
     private lateinit var edtNombre: TextInputEditText
     private lateinit var edtCantidad: TextInputEditText
     private lateinit var edtPrecio: TextInputEditText
@@ -20,12 +21,12 @@ class EditarProductoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_producto)
 
-        // Configurar toolbar
+        // Configurar toolbar, cambia su título
         val toolbar = findViewById<Toolbar>(R.id.toolbarEditarProducto)
         toolbar.title = "Editar Producto"
         setSupportActionBar(toolbar)
 
-        // Referencias a los campos
+        // Enlazas los elementos del XML
         edtNombre = findViewById(R.id.edtNombreProductoEditar)
         edtCantidad = findViewById(R.id.edtCantidadProductoEditar)
         edtPrecio = findViewById(R.id.edtPrecioProductoEditar)
@@ -35,6 +36,7 @@ class EditarProductoActivity : AppCompatActivity() {
         // Obtener ID del producto desde el intent
         val productoId = intent.getStringExtra("productoId")
 
+        //Validacion, si no llega ningún ID, se cierra la pantalla
         if (productoId.isNullOrEmpty()) {
             // Ya no mostramos el mensaje
             finish()

@@ -22,15 +22,19 @@ class BajoStockActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bajo_stock)
 
+        //Configura como barra de herramientas de la pantalla
         val toolbar = findViewById<Toolbar>(R.id.toolbarBajoStock)
         setSupportActionBar(toolbar)
 
+        //Obtiene el UID del usuario actual logueado con Firebase Auth
         uid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 
+
+        //Se enlaza con el RecyclerView de la interfaz
         recycler = findViewById(R.id.recyclerBajoStock)
         recycler.layoutManager = LinearLayoutManager(this)
 
-        // ✅ Adapter configurado con edición, eliminación y mostrar categoría
+        // Adapter configurado con edición, eliminación y mostrar categoría
         adapter = ProductoAdapter(
             mutableListOf(),
             onEditar = { producto ->
@@ -48,7 +52,7 @@ class BajoStockActivity : AppCompatActivity() {
                     }
                 }
             },
-            mostrarCategoria = true // 👈 Aquí se muestra la categoría
+            mostrarCategoria = true // Aquí se muestra la categoría
         )
 
         recycler.adapter = adapter
